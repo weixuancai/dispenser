@@ -1,0 +1,33 @@
+
+When sending a message to event-handler, the msgid indicates which handler this message is for.
+
+
+Content example:
+
+#LOG
+
+[Log];Reboot time 2017-07-19-15-30-06
+
+#ERROR
+
+[Error];Failed to open the ttyS0 port
+
+#CONTROL
+
+[Control];Freezer_agent;Freezer_Uploader;Cooler_Max_Temp,50
+
+#RESULT
+
+[Result];Freezer_Uploader;Freezer_agent;Cooler_Max_Temp,True
+
+#LEAVE
+
+[Leave];Freezer_Uploader;Interrupt signal received, leaving.
+
+#SHUTDOWN
+
+[Shutdown];GWInfo;OK
+
+#RESTART
+
+[Restart];Freezer_Uploader;Restarting Freezer_Uploader

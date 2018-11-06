@@ -1,0 +1,3 @@
+#Maximum agent number:5
+http_mongo;./http_mongo
+#END

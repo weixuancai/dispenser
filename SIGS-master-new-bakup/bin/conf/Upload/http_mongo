@@ -1,0 +1,14 @@
+#Configuration for Solar Uploader agent
+GW_ver 1.0
+IP_1 203.73.24.133:9000/PV_rawdata
+IP_2 140.118.70.135:9100/PV_rawdata
+IP_3 --
+IP_4 --
+IP_5 --
+Date_Time 1500275912
+Send_Rate 1
+Gain_Rate 0.5
+Backup_time 60
+MAC_Address 7c:b0:c2:4f:76:1c
+Station_ID BMW_Test
+GW_ID 9110

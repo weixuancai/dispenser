@@ -1,0 +1,4 @@
+#Configuration for sqlite3 db
+LogRetainDays;60
+DatatableName;Solar
+#END

@@ -1,0 +1,116 @@
+To-Do-List:
+
+A. Smart Campus
+    
+    1. Dynamic cpm70_agent: 
+        
+        Put mongo and agent together, refresh list everytime before we try to retrieve the data
+
+B. Solar Project
+
+    Rebuild structure: fit the need of Solar Project
+
+    1. Rebuild core structure  (1 week = 7 days work time)
+
+        |   Master & Submaster communication
+        |   Shared memory list (Static or Dynamic ?)
+        |   Event handler (Log and mailing system)
+        |   local db (sqlite3)
+        |   mailing system
+
+    2. Build Solar Agent (1 week = 7 days work time)
+
+        |   collector
+        |   uploader
+
+        
+
+
+
+    3. All codes (Currently planned)
+        |   SGSmaster [done]
+        |   UploaderMaster [done]
+        |   DataBufferMaster [done]
+        |   CollectorMaster [done]
+        |   EventHandler [done]
+        |   MailingAgent [done]
+        |   Logger [done]
+        |   SolarPost [done]
+        |   SolarPut   [undone]
+        |   SolarCollect [undone]
+
+
+Notes:
+
+    test/sendmail.c will work, but some libraries are needed (libcurl and libssh2, libssl-dev).
+
+    Since printf is not reentrant function, using printf in sigaction callback function is not safe.
+
+    The db must be clean before any change to Collector's AutoList. 
+
+    make a function about reading configs (with inter process lock) seems reasonable.
+
+    Finish logger's process message then we'll move to real uploader and collector.
+
+    tx rx inf ifconfig could be big number, watch out. 
+
+    GWInfo's path is currently hard coded.
+
+    sqlitebrowser needs libqt4-dev package
+
+    timer will +4 on its own. If there are some timing issues, check them first.
+
+    * All codes (Current Status)
+  * Core:
+    * SGSmaster         [done]
+    * UploaderMaster    [done]
+    * DataBufferMaster  [done]
+    * CollectorMaster   [done]
+    * EventHandler      [done]
+    * MailingAgent      [done]
+    * Logger            [done]
+  * Agents:
+    * SolarPost         [done]
+    * SolarPut          [undone]
+    * GWInfo            [done]
+    * SolarCollect      [undone]
+
+* Future Plan:
+  * Stability :
+    * Run tests with all funtions
+    * Test all situations
+  * Flexibility :
+    * New Protocols
+    * New Functions
+  * Compatibility :
+    * Cross Platforms
+  * Maintainence
+    * Version update
+    * More Error-Handling mechanism
+    * Source Code Readibility
+  * Release:
+    * SDK for custimized programs
+
+    Final list:
+
+        1.collector/upload master need to process CONTROL and RESULT command
+
+        2.
+
+            finish SolarPut (data format correction, upload part)
+
+            record Inverter, Irr and temp status, 
+            (May revise the conf file or just use the status in the dLog, for example, add Inv_Status_01 to tags represents inverter status)
+
+            invoke delete function in logger
+
+        3.Test run with commands and Eric
+
+        4.Write Readme
+
+
+        Things to be finished:
+
+        Add Status tag in SolarCollect
+
+        if half of the info can't work properly, set the flag to -1

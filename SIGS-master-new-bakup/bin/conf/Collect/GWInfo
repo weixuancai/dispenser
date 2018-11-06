@@ -1,0 +1,5 @@
+#data info #deviceName, SensorName, valueName, ID, read address, read length, (optional)
+System,GWInfo,CPU_Usage,01,01,01,
+System,GWInfo,Memory_Usage,02,02,01,
+System,GWInfo,Storage_Usage,03,03,01,
+System,GWInfo,Network_Flow,04,04,01,
