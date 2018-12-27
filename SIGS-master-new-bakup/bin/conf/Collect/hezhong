@@ -9,6 +9,7 @@
 #ritesgs,B,B_Usage,01,02,03,
 #writesgs,C,C_Usage,01,02,03,
 #hezhong,dispenser,118,01,335,1,
+hezhong,dispenser,ErrorCode,01,231,1,
 hezhong,dispenser,Filter_CC,01,128,1,
 hezhong,dispenser,Filter_Day,01,129,01,
 hezhong,dispenser,Filter_Month,01,130,01,
