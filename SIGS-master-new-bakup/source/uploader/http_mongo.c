@@ -468,6 +468,12 @@ static int callback(void *data, int argc, char **argv, char **azColName)
 		val = atof(argv[i]);
             cJSON_AddNumberToObject(outerObj, "Usage_Record", val);
 
+        }
+	else if(strstr(azColName[i], "ErrorCode"))
+        {
+		val = atof(argv[i]);
+            cJSON_AddNumberToObject(outerObj, "ErrorCode", val);
+
         } 
         
     }
