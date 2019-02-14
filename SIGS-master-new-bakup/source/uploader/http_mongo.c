@@ -352,12 +352,12 @@ static int callback(void *data, int argc, char **argv, char **azColName)
         //     cJSON_AddStringToObject(outerObj, "IceSystem", argv[i]);
 
         // }
-        // else if(strstr(azColName[i], "Sterilizing"))
-        // {
+        else if(strstr(azColName[i], "Sterilizing"))
+        {
 
-        //     cJSON_AddStringToObject(outerObj, "Sterilizing", argv[i]);
+            cJSON_AddStringToObject(outerObj, "Sterilizing", argv[i]);
 
-        // }
+        }
         else if(strstr(azColName[i], "HighWaterLevel"))
         {
             i_data = atoi(argv[i]);						
