@@ -372,17 +372,17 @@ int FetchAndUpdateInfoTable()
                     if(ret == HOT)
                     {
                         type = HOT;
-                        printf("quickly change switch HOT the switch\n");					
+                        printf("quickly change switch HOT the switch\n");				
                     }
                     if(ret == WARM)
                     {
                         type = WARM;
-                        printf("quickly change switch WARM the switch\n");					
+                        printf("quickly change switch WARM the switch\n");				
                     }
                     if(ret == COLD)
                     {
                         type = COLD;
-                        printf("quickly change switch COLD the switch\n");					
+                        printf("quickly change switch COLD the switch\n");				
                     }
 				}
 				//printf("tv_sec:%d\n",start.tv_sec);
@@ -396,7 +396,7 @@ int FetchAndUpdateInfoTable()
 				if(type == 0)
 					break;
 				
-				//printf("There's someone close the (%d) switch\n",type);				
+				//printf("There's someone close the (%d) switch\n",type);		
 				gettimeofday(&end,NULL);
 				diff = 1000000 * (end.tv_sec-start.tv_sec)+ end.tv_usec-start.tv_usec;
 				//printf("the difference is %ld\n",diff);
@@ -569,10 +569,10 @@ int FetchAndUpdateInfoTable()
                        
                     }
 		    else if(!strcmp(dataTemp->valueName, "Sterilizing"))
-                    {
-                        snprintf(dLog.value.s,(sizeof(dLog.value.s) - 1),"%d",dataTemp->modbusInfo.response[4] & 0x80);
-                        sgsWriteConsumption(dataTemp, &dLog);
-                    }
+		    {
+			snprintf(dLog.value.s,(sizeof(dLog.value.s) - 1),"%d",dataTemp->modbusInfo.response[4] & 0x80);
+			sgsWriteSharedMemory(dataTemp, &dLog);
+		    }
 
                 }
                 //Set value switch status (Switch info  411) Heating....
