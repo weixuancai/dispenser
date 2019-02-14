@@ -568,6 +568,11 @@ int FetchAndUpdateInfoTable()
                         sgsWriteSharedMemory(dataTemp, &dLog);
                        
                     }
+		    else if(!strcmp(dataTemp->valueName, "Sterilizing"))
+                    {
+                        snprintf(dLog.value.s,(sizeof(dLog.value.s) - 1),"%d",dataTemp->modbusInfo.response[4] & 0x80);
+                        sgsWriteConsumption(dataTemp, &dLog);
+                    }
 
                 }
                 //Set value switch status (Switch info  411) Heating....
