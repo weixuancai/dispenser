@@ -121,7 +121,7 @@ char start_time[32] = {'\0'};
 
 char end_time[32] = {'\0'};
 
-char *deviceID = "EE_06_01";
+char *deviceID = "E2_08_01";
 
 int serverCount = 0;
 
@@ -355,7 +355,7 @@ static int callback(void *data, int argc, char **argv, char **azColName)
         else if(strstr(azColName[i], "Sterilizing"))
         {
 
-            cJSON_AddStringToObject(outerObj, "Sterilizing", argv[i]);
+             cJSON_AddStringToObject(outerObj, "Sterilizing", argv[i]);
 
         }
         else if(strstr(azColName[i], "HighWaterLevel"))
@@ -402,21 +402,21 @@ static int callback(void *data, int argc, char **argv, char **azColName)
         else if(strstr(azColName[i], "HotConsumption"))
         {
 
-            val = atof(argv[i]);											
+            val = atof(argv[i]);									
             cJSON_AddNumberToObject(outerObj, "HotConsumption", val);		        
 
         }
         else if(strstr(azColName[i], "WarmConsumption"))
         {
 
-            val = atof(argv[i]);											
+            val = atof(argv[i]);									
             cJSON_AddNumberToObject(outerObj, "WarmConsumption", val);
 
         }
         else if(strstr(azColName[i], "ColdConsumption"))
         {
 
-            val = atof(argv[i]);											
+            val = atof(argv[i]);									
             cJSON_AddNumberToObject(outerObj, "ColdConsumption", val);
 
         }
